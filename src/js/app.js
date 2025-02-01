@@ -26,7 +26,7 @@ export default class App {
 
         this.useMiddleware();
         this.loadControllers();
-        this.loadDB();
+        //this.loadDB();
         this.addRoutes();
         // this.listenToServer();
     }
@@ -59,9 +59,9 @@ export default class App {
         this.logoutController = new LogoutController();
     }
 
-    loadDB() {
-        this.controller.db.connectDB();
-    }
+    // loadDB() {
+    //     this.controller.db.connectDB();
+    // }
 
     addRoutes() {
         this.app.use( "/index", this.indexController.router );
