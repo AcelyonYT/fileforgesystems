@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include( "../partials/head" ); %>
+    <link rel="stylesheet" href="../../css/home.css">
+    <script type="module" src="../../js/utility/home.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <% if( username != "" ) { %>
+            <div class="dropdown">
+                <button class="dropDownButton"><%= username %></button>
+                <div id="userDropDown" class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        <% } else { %>
+            <p><a href="/login">Login</a>/<a href="/create">Create</a></p>
+        <% } %>
+        <header>
+            <%- include( "../partials/header" ); %>
+        </header>
+        <main>
+            <section>
+                <h2>What is Cyber City?</h2>
+                <p>A virutal online city, where you collect items, attack npcs and users, and much more! You can also chat with fellow users such as yourself!</p>
+            </section>
+            <section>
+                <h2>How to get started</h2>
+                <p>First, you need to create an account. Once you have an account, you can log in and start playing the game!</p>
+            </section>
+            <section>
+                <h2>Features</h2>
+                <ul>
+                    <li>PVP</li>
+                    <li>PVE</li>
+                    <li>Global Ecomony, User Trading</li>
+                    <li>Clans, and Quest!</li>
+                    <li>Interactive games</li>
+                    <li>So many Items to collect!</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <%- include( "../partials/footer" ); %>
+        </footer>
+    </div>
+</body>
+</html>
