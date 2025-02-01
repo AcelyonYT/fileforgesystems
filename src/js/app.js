@@ -15,7 +15,7 @@ import CreateController from './controllers/accountControllers/createController.
 import LoginController from './controllers/accountControllers/loginController.js';
 import LogoutController from './controllers/accountControllers/logoutController.js';
 
-export default class App {
+export class App {
     constructor() {}
 
     init() {

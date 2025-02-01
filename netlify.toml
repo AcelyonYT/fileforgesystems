@@ -9,30 +9,30 @@ publish = "src"
 
 [[redirects]]
 from = "/"
-to = "/netlify/functions/server"
+to = "/.netlify/functions/index"
 status = 200
 force = true
 
 [[redirects]]
 from = "/index"
-to = "/netlify/functions/server"
+to = "/.netlify/functions/index"
 status = 200
 force = true
 
 [[redirects]]
 from = "/create"
-to = "/netlify/functions/server"
+to = "/.netlify/functions/index"
 status = 200
 force = true
 
 [[redirects]]
 from = "/login"
-to = "/netlify/functions/server"
+to = "/.netlify/functions/index"
 status = 200
 force = true
 
 [[redirects]]
 from = "/logout"
-to = "/netlify/functions/server"
+to = "/.netlify/functions/index"
 status = 200
 force = true
