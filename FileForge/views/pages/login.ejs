@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include( "../partials/head" ); %>
+    <link rel="stylesheet" href="../css/login.css">
+    <script type="module" src="../js/utility/login.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <header>
+            <%- include( "../partials/header" ); %>
+        </header>
+        <main>
+            <section class="loginFlex">
+                <h2>Login to Account</h2>
+                <div id="error">
+                    <% if( error != "" ) { %>
+                        <p><%= error %></p>
+                    <% } %>
+                </div>
+                <form id="loginForm" action="/login/check-login" method="post" novalidate>
+                    <label for="user">Username:</label>
+                    <input type="text" id="user" name="user" placeholder="Enter Username" value="<%= username %>" required>
+
+                    <label for="password">Password:</label>
+                    <input type="text" id="password" name="password" placeholder="Enter Password" required>
+
+                    <label>
+                        <% if( username != "" ) { %>
+                            <input type="checkbox" name="remember" checked> Remember me
+                        <% } else { %>
+                            <input type="checkbox" name="remember"> Remember me
+                        <% } %>
+                    </label>
+
+                    <button id="submitForm" type="submit">Login!</button>
+                </form>
+                <div class="rowFlex">
+                    <p><a href="#">Forgot username?</a></p>
+                    <p><a href="#">Forgot password?</a></p>
+                </div>
+                <p><a href="/index">Back to Home</a></p>                                                                                    
+            </section>
+        </main>
+        <footer>
+            <%- include( "../partials/footer" ); %>
+        </footer>
+    </div>
+</body>
+</html>
