@@ -6,6 +6,7 @@ import cors from 'cors';
 import session from 'express-session';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
+import path from 'path';
 
 import Controller from './controllers/controller.js';
 import IndexController from './controllers/indexController.js';
@@ -43,7 +44,7 @@ export default class App {
         this.app.use( express.json() );
         this.app.use( express.urlencoded( { extended: true } ) );
         this.app.use( cors() );
-        this.app.use( express.static( "C:\\Users\\Epicg\\Desktop\\FileForge" ) );
+        this.app.use( express.static( path.join( __dirname, 'fileforgesystems') ) );
     }
 
     loadControllers() {
