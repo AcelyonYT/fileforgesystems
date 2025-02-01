@@ -15,4 +15,4 @@ app.init();
 ) );
 
 export default app;
-export const handler = serverless( app );
+export const handler = serverless( app.app );
