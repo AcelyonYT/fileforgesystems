@@ -1,5 +1,4 @@
-import App from '../../src/js/app.js';
-import serverless from 'serverless-http';
+import App from './src/js/app.js';
 
 const app = new App();
 app.init();
@@ -15,4 +14,3 @@ app.init();
 ) );
 
 export default app;
-export const handler = serverless( app.app );

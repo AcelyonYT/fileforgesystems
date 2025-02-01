@@ -22,13 +22,13 @@ export default class App {
         this.app = express();
         this.port = 8080;
         this.filename = fileURLToPath( import.meta.url );
-        this.dirname = path.dirname( this.filename );
+        this.dirname = path.dirname( this.filename ) + "/../";
 
         this.useMiddleware();
         this.loadControllers();
-        //this.loadDB();
+        this.loadDB();
         this.addRoutes();
-        // this.listenToServer();
+        this.listenToServer();
     }
     
     useMiddleware() {
@@ -47,8 +47,8 @@ export default class App {
         this.app.use( express.json() );
         this.app.use( express.urlencoded( { extended: true } ) );
         this.app.use( cors() );
-
-        this.app.use( express.static( path.join( this.dirname, "/../" ) ) );
+        this.app.use( express.static( path.join( this.dirname ) ) );
+        this.app.set( 'views', path.join( this.dirname, 'views' ) );
     }
 
     loadControllers() {
@@ -59,9 +59,9 @@ export default class App {
         this.logoutController = new LogoutController();
     }
 
-    // loadDB() {
-    //     this.controller.db.connectDB();
-    // }
+    loadDB() {
+        this.controller.db.connectDB();
+    }
 
     addRoutes() {
         this.app.use( "/index", this.indexController.router );
@@ -70,9 +70,9 @@ export default class App {
         this.app.use( "/logout", this.logoutController.router );
     }
 
-    // listenToServer() {
-    //     this.app.listen( this.port, () => {
-    //         console.log( `Server is running on port ${ this.port }` );
-    //     });
-    // }
+    listenToServer() {
+        this.app.listen( this.port, () => {
+            console.log( `Server is running on port ${ this.port }` );
+        });
+    }
 }
