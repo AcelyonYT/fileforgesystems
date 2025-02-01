@@ -1,4 +1,5 @@
 [functions]
+[funcitons.include_files]
 external_node_modules = ["express"]
 include_files = "src/**/*"
 
