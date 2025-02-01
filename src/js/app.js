@@ -28,7 +28,7 @@ export default class App {
         this.loadControllers();
         this.loadDB();
         this.addRoutes();
-        // this.listenToServer();
+        this.listenToServer();
     }
     
     useMiddleware() {
@@ -70,9 +70,9 @@ export default class App {
         this.app.use( "/logout", this.logoutController.router );
     }
 
-    // listenToServer() {
-    //     this.app.listen( this.port, () => {
-    //         console.log( `Server is running on port ${ this.port }` );
-    //     });
-    // }
+    listenToServer() {
+        this.app.listen( this.port, () => {
+            console.log( `Server is running on port ${ this.port }` );
+        });
+    }
 }
